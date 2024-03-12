@@ -11,7 +11,6 @@ public class EX01 {
         puppy.introduce();
         puppy.move();
         puppy.introduce();
-
     }
 }
 
