@@ -9,6 +9,13 @@ public class Product {
     String name;
     int price;
     String description;
+
+    public Product(String img, String name, int price, String description) {
+        this.img = img;
+        this.name = name;
+        this.price = price;
+        this.description = description;
+    }
 }
 
 //자바 MVC
