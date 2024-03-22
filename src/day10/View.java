@@ -22,7 +22,7 @@ public class View {
 
         // 상품 전체 조회
         List<Product> allProducts = controller.queryAll();
-        String all = "모든 상품: ";
+        String all = "전체 상품 조회: ";
         for(int i = 0; i < allProducts.size(); i++) {
             all += allProducts.get(i).name + " ";
         }
@@ -34,8 +34,8 @@ public class View {
 
         // 상품 개별 조회
         int id = 1;
-        Product one = controller.queryOne(id);
-        System.out.println("개별 상품: " + one.name);
+        Product oneProduct = controller.queryOne(id);
+        System.out.println("개별 상품 조회: " + oneProduct.name);
     }
 }
 
@@ -51,13 +51,13 @@ class Controller {
     }
 
     public List<Product> queryAll() {
-        List<Product> allProducts = logic.findAllProducts();
-        return allProducts; //hi
+//        List<Product> allProducts = logic.findAllProducts();
+        return logic.findAllProducts();
     }
 
     public Product queryOne(int id) {
-        Product oneProduct = logic.findOneProduct(id);
-        return oneProduct;
+//        Product oneProduct = logic.findOneProduct(id);
+        return logic.findOneProduct(id);
     }
 }
 
@@ -82,7 +82,7 @@ class Logic {
     }
 
     public List<Product> findAllProducts() {
-        return new ArrayList<>(db.values());
+      return new ArrayList<>(db.values());
     }
 
     public Product findOneProduct(int id) {
